@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaBoost | Registro</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/254e61a11b.js"></script>
+</head>
+<body>
+    <div class="register-box">
+        <span class="register-box--color">
+            <span class="register-title">Registro</span>
+            <p class="register-subtitle">Crie uma conta para continuar.</p> <br>
+
+            {% include 'parciais/_messages.html' %}
+
+            <div class="register-infos">
+                <form method="POST" action="{% url 'register' %}">
+                    {% csrf_token %}
+                <span class="username-span"><i class="fa-solid fa-user"></i> Nome de usuário</span> <br>
+                <input type="text" class="input-user user-class" placeholder="Usuário" name="name" value="{{request.POST.name}}"> <br>
+                <span class="email-span"><i class="fa-solid fa-envelope"></i> Endereço de e-mail</span> <br>
+                <input type="email" class="input-user mail-class" placeholder="E-mail" name="email" value="{{request.POST.email}}" > <br>
+                <span class="password-span"><i class="fa-solid fa-lock"></i> Senha</span> <br>
+                <input type="password" class="input-user password-class" placeholder="Senha" name="password"> <br>
+                <span class="password-span"><i class="fa-solid fa-lock"></i> Confirme a senha</span> <br>
+                <input type="password" class="input-user repeat-psw-class" placeholder="Senha" name="password2"> <br>
+                <input type="submit" class="input-user input-button" value="Criar conta">
+                </form>
+            </div>
+            <span>Ou registre com</span>
+            <div class="login-methods">
+                <i class="fa-brands fa-google"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+            </div>
+            <span class="login-method">
+                Já possui uma conta? <a class="login-color" href="{% url 'login' %}">Entrar</a>
+            </span>
+        </span>
+    </div>
+</body>
+</html>

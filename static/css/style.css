@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-color: rgb(252, 252, 252);
+}
+
+.register-box{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.register-box--color{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.027);
+    justify-content: center;
+    margin-top: 60px;
+    border-radius: 5px;
+    height: 800px;
+    width: 420px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.register-title{
+    padding-top: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.regiser-infos{
+    text-align: left;
+    color: rgb(46, 46, 46);
+}
+
+input{
+    width: 210px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.062);
+}
+
+.input-button{
+    width: 230px;
+    color: white;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color: rgb(74, 116, 255);
+    border-radius: 5px;
+}
+
+.input-button:hover{
+    cursor: pointer
+}
+
+i {
+    padding: 5px;
+    color: rgb(46, 46, 46);
+}
+
+.login-method{
+    padding-top: 100px;
+}
+
+.login-methods:hover{
+    cursor: pointer;
+}
+
+.login-color{
+    color: blue;
+}
+
+.login-color:hover{
+    cursor: pointer;
+}

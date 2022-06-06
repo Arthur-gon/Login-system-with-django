@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaBoost | Registro</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/254e61a11b.js"></script>
+</head>
+<body>
+    <div class="register-box">
+        <span class="register-box--color">
+            <span class="register-title">Login</span>
+            <p class="register-subtitle">Entre na sua conta para continuar.</p> <br>
+
+            {% include 'parciais/_messages.html' %}
+
+            <div class="register-infos">
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                <span class="email-span"><i class="fa-solid fa-envelope"></i> Nome de usuário</span> <br>
+                <input type="text" class="input-user mail-class" placeholder="E-mail" name="name"> <br>
+                <span class="password-span"><i class="fa-solid fa-lock"></i> Senha</span> <br>
+                <input type="password" class="input-user password-class" placeholder="Senha" name="password"> <br>
+                <input type="submit" class="input-user input-button" value="Entrar">
+                </form>
+            </div>
+            <span>Ou entre com</span>
+            <div class="login-methods">
+                <i class="fa-brands fa-google"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+            </div>
+            <span class="login-method">
+                Ainda não possui uma conta? <a class="login-color" href="{% url 'register' %}">Registre-se</a>
+            </span>
+        </span>
+    </div>
+</body>
+</html>
